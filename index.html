@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Box Transition</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+  </head>
+
+  <body>
+    <h1>Transition Rectangle</h1>
+    <canvas id="myCanvas" width ="500" height="400" ></canvas>
+    <button onclick="draw(20, 20)">click me</button>
+    
+
+    <script>
+        function draw (x,y){ 
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+        context.clearRect(0, 0, 500, 400);
+        context.fillStyle = "orange";
+        context.fillRect(150, y, 150, 100);
+        y= y + 1;
+        var loopTimer = setTimeout('draw('+x+', '+y+')', 500);
+      }
+          
+    </script>
+    
+  </body>
+</html>
